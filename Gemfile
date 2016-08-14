@@ -8,6 +8,7 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Middleman Gems
-gem 'middleman', '>= 4.0.0'
-gem 'middleman-sprockets', '>= 4.0'
-gem 'middleman-react'
+gem 'middleman',            '>= 4.0.0'
+gem 'middleman-sprockets',  '>= 4.0'
+gem 'middleman-react',      '~> 0.13'
+gem 'middleman-gh-pages',   '~> 0.3'
