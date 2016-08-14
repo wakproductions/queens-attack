@@ -41,6 +41,7 @@ configure :build do
 end
 
 activate :react
+activate :sprockets
 
 # after_configuration do
 #   sprockets.append_path File.dirname(::React::Source.bundled_path_for('react.js'))

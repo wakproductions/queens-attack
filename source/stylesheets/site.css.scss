@@ -27,6 +27,10 @@ h1 {
   display: inline;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 #queens-attack-application {
   margin-top: 50px;
 }
@@ -38,6 +42,14 @@ h1 {
   vertical-align: middle;
 }
 
+@mixin select-team-option {
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+  font-size: 30px;
+  margin: 0 3px;
+  padding: 0 3px;
+}
+
 .select-chesspiece {
   margin-bottom: 10px;
   margin-left: auto;
@@ -46,12 +58,17 @@ h1 {
 
   .select-team {
     @include chesspiece;
-    border: 1px solid #bbbbbb;
-    border-radius: 4px;
+    @include select-team-option;
     background-color: #bbbbbb;
-    font-size: 30px;
-    margin: 0 3px;
-    padding: 0 3px;
+  }
+  .select-team-selecting {
+    @include chesspiece;
+    @include select-team-option;
+    background-color: #fcfbb1;
+  }
+  .select-team:hover, .select-team-selecting:hover{
+    background-color: #f0ad4e;
+    cursor: pointer;
   }
 }
 
@@ -81,7 +98,7 @@ table.chessboard {
   }
 
   td.dark {
-    background-color: #663300;
+    background-color: #995000;
   }
 }
 
@@ -90,6 +107,10 @@ table.chessboard {
   margin-left: auto;
   margin-right: auto;
   width: 450px;
+
+  .label {
+    margin-left: 4px;
+  }
 }
 
 .challenge-description {
