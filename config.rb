@@ -1,3 +1,5 @@
+require 'sprockets/es6'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -37,13 +39,17 @@ configure :build do
   # activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   activate :relative_assets
   set :site_url, '/queens-attack'
 end
 
 activate :react
+activate :sprockets do |s|
+  s.supported_output_extensions << '.es6'
+  s.supported_output_extensions << '.jsx'
+end
 
 # after_configuration do
 #   sprockets.append_path File.dirname(::React::Source.bundled_path_for('react.js'))
